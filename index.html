@@ -1,5 +1,4 @@
 <html>
-
 <head>
     <title> Tuition </title>  <!-- Title -->
     <!--stylesheet and vue.js links -->
@@ -7,13 +6,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
 </head>
-
 <body>
     <div id="app">
-
         <header>
-            <h1 v-text="sitename"> </h1> 
-         
+            <h1 v-text="sitename"> </h1>         
         </header>
         <main>
        <!-- Field Set for Data retreival -->
@@ -32,12 +28,9 @@
                      Add to Cart
                 </button>
                 <!-- This button will be displayed otherwise -->
-                <button disabled="disabled" v-else>Add to cart</button> <!-- diable the button if spaces are not available in class -->
-            
-
+                <button disabled="disabled" v-else>Add to cart</button> <!-- diable the button if spaces are not available in class -->           
             </fieldset>
         </main>
-
     </div>
     <script type="text/javascript">
         var webstore = new Vue({
@@ -49,11 +42,9 @@
                     subject: "Math",
                     location: "London",
                     price: 100,
-                    spaces: 10,
-                    
+                    spaces: 10,                   
                 },
                 cart: [], // array to store items in cart
-
             },
             methods: { // method to add the selected item to cart
                 addToCart: function() {
@@ -71,12 +62,7 @@
             canAddToCart: function() { //checking if it can be added to cart function
                 return this.product.availableInventory > this.cartItemCount;  
             }
-
-
         });
     </script>
-
-
 </body>
-
 </html>
