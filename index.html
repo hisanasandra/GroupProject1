@@ -1,7 +1,8 @@
 <html>
 
 <head>
-    <title> Tuition </title>
+    <title> Tuition </title>  <!-- Title -->
+    <!--stylesheet and vue.js links -->
     <link rel="stylesheet" type="text/css" href="Style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
@@ -15,7 +16,7 @@
          
         </header>
         <main>
-
+       <!-- Field Set for Data retreival -->
             <fieldset>
                 <figure>
                     <img v-bind:src="classes.image">
@@ -25,12 +26,13 @@
                 <p> Price: {{classes.price}}</p>
                 <p> spaces: {{classes.spaces}}</p>
                 <p> Duration: 2hrs </p>
+                <!-- Add to Cart Button -->
                 <button v-on:click="addToCart"
                 v-if="canAddToCart">
                      Add to Cart
                 </button>
                 <!-- This button will be displayed otherwise -->
-                <button disabled="disabled" v-else>Add to cart</button>
+                <button disabled="disabled" v-else>Add to cart</button> <!-- diable the button if spaces are not available in class -->
             
 
             </fieldset>
@@ -40,8 +42,8 @@
     <script type="text/javascript">
         var webstore = new Vue({
             el: '#app',
-            data: {
-                sitename: 'Classes',
+            data: { // storing the data
+                sitename: 'Classes', //naming the sitename
                 classes: {
                     id: 1001,
                     subject: "Math",
@@ -50,23 +52,23 @@
                     spaces: 10,
                     
                 },
-                cart: [],
+                cart: [], // array to store items in cart
 
             },
-            methods: {
+            methods: { // method to add the selected item to cart
                 addToCart: function() {
                     if (this.classes.spaces > 0) {
-                    this.classes.spaces -= 1;
+                    this.classes.spaces -= 1; // confirm there are enough space left in class
                     this.cart.push(this.classes.id);
                     }
                 }
             },
-            computed: {
-	             canAddToCart: function() {
+            computed: { // the Computed Porperty Object
+	             canAddToCart: function() { //the property name - calculated when it is called
 		             return this.classes.spaces != 0;
 	           },
             },
-            canAddToCart: function() {
+            canAddToCart: function() { //checking if it can be added to cart function
                 return this.product.availableInventory > this.cartItemCount;  
             }
 
