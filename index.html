@@ -24,7 +24,7 @@
                 <p> Location: {{classes.location}}</p>
                 <p> Price: {{classes.price}}</p>
                 <p> spaces: {{classes.spaces}}</p>
-                <p> Duration: 3hrs </p>
+                <p> Duration: 2hrs </p>
                 <button v-on:click="addToCart"
                 v-if="canAddToCart">
                      Add to Cart
@@ -47,7 +47,8 @@
                     subject: "Math",
                     location: "London",
                     price: 100,
-                    spaces: 10
+                    spaces: 10,
+                    
                 },
                 cart: [],
 
