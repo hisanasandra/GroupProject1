@@ -2,7 +2,7 @@
 <head>
     <title> Tuition </title>  <!-- Title -->
     <!--stylesheet and vue.js links -->
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="Style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
 </head>
@@ -28,7 +28,7 @@
                      Add to Cart
                 </button>
                 <!-- This button will be displayed otherwise -->
-                <button disabled="disabled" v-else>Add to cart</button> <!-- diable the button if spaces are not available in class -->           
+                <button disabled="disabled" v-else>Add to cart</button> <!-- disable the button if spaces are not available in class -->           
             </fieldset>
         </main>
     </div>
@@ -42,7 +42,14 @@
                     subject: "Math",
                     location: "London",
                     price: 100,
-                    spaces: 10,                   
+                    spaces: 5,                   
+                },
+                {
+                    id: 1002,
+                    subject: "Science",
+                    location: "New York",
+                    price: 200,
+                    spaces: 5,                   
                 },
                 cart: [], // array to store items in cart
             },
